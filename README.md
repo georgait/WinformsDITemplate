@@ -5,9 +5,8 @@ This starter project is suitable for people who want to make use of DI with Wind
 
 
 Notes.
-1) In order to open a child Form from parent form here is a sample use
-    
-    CurrentHost = Host.CreateDefaultBuilder()
+1) In order to open a child Form from parent form here is a sample use    
+        CurrentHost = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
                     services.AddScoped<EntryForm>();
@@ -17,6 +16,5 @@ Notes.
                 .UseSerilog()
                 .Build();
   
-     And in EntryForm you simply add this line of code in a button for showing the child Form
-              
+     And in EntryForm you simply add this line of code in a button for showing the child Form              
               var form = (ChildForm)Program.CurrentHost.Services.GetService(typeof(ChildForm));
