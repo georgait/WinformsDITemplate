@@ -20,3 +20,4 @@ Notes.
      And in EntryForm you simply add this line of code in a button for showing the child Form              
               
               var childForm = (ChildForm)Program.CurrentHost.Services.GetService(typeof(ChildForm));
+              childForm.Show();
