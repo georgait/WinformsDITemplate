@@ -4,7 +4,7 @@ A starter Windows Forms project that includes dependency injection.
 This starter project is suitable for people who want to make use of DI with Windows Forms Application (.net5).
 
 
-Notes.
+Usage example:
 1) In order to open a child Form from parent Form here is a sample use    
         
         CurrentHost = Host.CreateDefaultBuilder()
