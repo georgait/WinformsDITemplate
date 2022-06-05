@@ -43,22 +43,19 @@ namespace WinForms
                     services.AddScoped<EntryForm>();
                 })
                 .UseSerilog()
-                .Build();
-
-            using (var serviceScope = CurrentHost.Services.CreateScope())
+                .Build();           
+            
+            using IServiceScope serviceScope = CurrentHost.Services.CreateScope();
+            IServiceProvider provider = serviceScope.ServiceProvider;
+            try 
             {
-                var services = serviceScope.ServiceProvider;
-
-                try
-                {
-                    var entryForm = services.GetRequiredService<EntryForm>();
-                    Application.Run(entryForm);
-                    Log.Logger.Information("Application Started");
-                }
-                catch (Exception ex)
-                {
-                    Log.Logger.Error(ex.Message);
-                }
+                var entryForm = provider.GetRequiredService<EntryForm>();
+                Application.Run(entryForm);
+                Log.Logger.Information("Application Started");
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error(ex.Message);
             }
         }
 
