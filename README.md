@@ -1,7 +1,7 @@
 # Winforms DI Template
 A starter Windows Forms project that includes dependency injection.
 
-This starter project is suitable for people who want to make use of DI with Windows Forms Application (.net5).
+This starter project is suitable for people who want to make use of DI with Windows Forms Application (.net5+).
 
 
 Usage example:
